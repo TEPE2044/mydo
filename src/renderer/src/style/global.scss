@@ -1,0 +1,48 @@
+:root {
+	--app-bg-start: #f8fafc;
+	--app-bg-end: #eef2ff;
+	--app-surface: rgba(255, 255, 255, 0.82);
+	--app-surface-border: rgba(148, 163, 184, 0.18);
+	--app-surface-shadow: 0 20px 45px rgba(148, 163, 184, 0.12);
+	--app-surface-blur: blur(18px);
+	--app-text: #0f172a;
+	--app-text-muted: rgba(51, 65, 85, 0.82);
+	--app-text-soft: rgba(51, 65, 85, 0.72);
+	--app-accent: #0284c7;
+	--app-menu-text: #334155;
+	--app-menu-hover: #e0f2fe;
+	--app-panel-bg: rgba(255, 255, 255, 0.82);
+	--app-panel-border: rgba(148, 163, 184, 0.22);
+}
+
+.app-surface {
+	background: var(--app-surface);
+	border: 1px solid var(--app-surface-border);
+	box-shadow: var(--app-surface-shadow);
+	backdrop-filter: var(--app-surface-blur);
+	color: var(--app-text);
+}
+
+.app-surface--panel {
+	background: var(--app-panel-bg);
+	border: 1px solid var(--app-panel-border);
+	color: var(--app-text);
+}
+
+.app-page-title {
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.app-page-eyebrow {
+	margin-bottom: 12px;
+	font-size: 12px;
+	letter-spacing: 0.18em;
+	color: var(--app-accent);
+}
+
+.app-page-body {
+	margin-top: 12px;
+	max-width: 56ch;
+	color: var(--app-text-muted);
+}
