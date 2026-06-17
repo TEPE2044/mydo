@@ -3,6 +3,8 @@ import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 export default defineConfig({
   main: {
@@ -19,11 +21,17 @@ export default defineConfig({
     },
     plugins: [
       vue(),
+      Icons({
+        autoInstall: true
+      }),
       Components({
-        dirs: ['./renderer/src/components','./main/db'],
-        extensions: ['vue','ts'],
+        dirs: ['./src/renderer/src/components'],
+        extensions: ['vue', 'ts'],
         resolvers: [
-          ElementPlusResolver() //import element-plus
+          IconsResolver({
+            enabledCollections: ['ep']
+          }),
+          ElementPlusResolver()
         ]
       })
     ]
