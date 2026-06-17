@@ -46,3 +46,9 @@
 	max-width: 56ch;
 	color: var(--app-text-muted);
 }
+
+.page-card {
+  min-height: calc(100vh - 48px);
+  padding: 32px;
+  border-radius: 24px;
+}

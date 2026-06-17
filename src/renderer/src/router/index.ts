@@ -5,12 +5,12 @@ export const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/create-mydo'
+      redirect: '/home'
     },
     {
-      path: '/create-mydo',
-      name: 'create-mydo',
-      component: () => import('../pages/CreateMydo.vue')
+      path: '/home',
+      name: 'home',
+      component: () => import('../pages/Home.vue')
     },
     {
       path: '/date',

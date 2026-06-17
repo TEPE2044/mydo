@@ -7,9 +7,5 @@
 </template>
 
 <style scoped>
-.page-card {
-  min-height: calc(100vh - 48px);
-  padding: 32px;
-  border-radius: 24px;
-}
+
 </style>
