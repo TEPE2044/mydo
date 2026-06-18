@@ -1,3 +1,7 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <section class="page-card app-surface">
     <p class="app-page-eyebrow">MY</p>

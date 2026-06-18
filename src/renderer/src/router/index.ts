@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
@@ -21,6 +21,13 @@ export const router = createRouter({
       path: '/my',
       name: 'my',
       component: () => import('../pages/My.vue')
+    },
+    {
+      path:'/plan-detail',
+      name:'plan-detail',
+      component: () => import('../pages/PlanDetail.vue')
     }
   ]
 })
+
+export default router;

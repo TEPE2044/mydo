@@ -23,7 +23,7 @@ const expand_nav = () => {
         <p>快速制定计划</p>
       </div>
       <div class="expand__btn" @click.stop="expand_nav()">
-        <el-button :text="isExpand ? 1 : 0" :size="isExpand ? 'large' : ''" :type="isExpand ? '' : 'info'">
+        <el-button :text="isExpand ? 1 : 0" :size="isExpand ? 'large' : ''" >
           <el-icon :size="20">
             <IEpFold v-if="isExpand" />
             <IEpExpand v-else />
@@ -48,7 +48,7 @@ const expand_nav = () => {
       </el-menu-item>
       <el-menu-item index="/my">
         <el-icon><IEpSetting /></el-icon>
-        <span>MY</span>
+        <span>设置</span>
       </el-menu-item>
     </el-menu>
   </aside>
