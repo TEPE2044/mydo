@@ -6,18 +6,12 @@ export function initDatabase() {
 
   // 创建表（IF NOT EXISTS 保证不会重复创建）
   db.exec(`
-    CREATE TABLE IF NOT EXISTS users (
+    CREATE TABLE IF NOT EXISTS plans (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT,
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    );
-
-    CREATE TABLE IF NOT EXISTS projects (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      user_id INTEGER,
-      FOREIGN KEY (user_id) REFERENCES users(id)
+      content TEXT NOT NULL,
+      d_time datetime,
+      created_at datetime NOT NULL,
+      updated_at datetime NOT NULL
     );
   `);
 
