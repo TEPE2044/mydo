@@ -25,7 +25,7 @@ export default defineConfig({
         autoInstall: true
       }),
       Components({
-        dirs: ['./src/renderer/src/components'],
+        dirs: [resolve('src/renderer/src/components'),resolve('src/renderer/src/pages')],
         extensions: ['vue', 'ts'],
         resolvers: [
           IconsResolver({
