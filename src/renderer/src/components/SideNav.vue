@@ -14,16 +14,19 @@ const expand_nav = () => {
 
 <template>
   <aside
-    class="side-nav app-surface--panel"
-    :class="isExpand ? 'side-expand' : 'side-close'"
+    class="side-nav app-surface--panel flex flex-col border-r border-[var(--app-panel-border)] overflow-hidden transition-[width] duration-300 ease-in-out"
+    :class="isExpand ? 'w-[190px]' : 'w-16'"
   >
-    <div class="side-nav__header" :class="{ 'side-nav__header--collapsed': !isExpand }">
-      <div class="side-nav__brand" v-show="isExpand">
-        <h5 class="brand">MYDO</h5>
-        <p>快速制定计划</p>
+    <div
+      class="flex items-start p-4 pb-3"
+      :class="!isExpand ? 'justify-center' : ''"
+    >
+      <div class="flex-1 overflow-hidden whitespace-nowrap" v-show="isExpand">
+        <h5 class="text-xl font-bold text-[var(--app-text)] font-[Trebuchet_MS]">MYDO</h5>
+        <p class="mt-1 text-xs text-[var(--app-text-soft)]">快速制定计划</p>
       </div>
-      <div class="expand__btn" @click.stop="expand_nav()">
-        <el-button :text="isExpand ? 1 : 0" :size="isExpand ? 'large' : ''" >
+      <div class="shrink-0 mt-1" @click.stop="expand_nav()">
+        <el-button :text="isExpand ? 1 : 0" :size="isExpand ? 'large' : ''">
           <el-icon :size="20">
             <IEpFold v-if="isExpand" />
             <IEpExpand v-else />
@@ -33,7 +36,7 @@ const expand_nav = () => {
     </div>
 
     <el-menu
-      class="side-nav__menu"
+      class="border-r-0 bg-transparent"
       :default-active="activePath"
       :collapse="!isExpand"
       router
@@ -55,73 +58,11 @@ const expand_nav = () => {
 </template>
 
 <style lang="scss" scoped>
-$side-expand-width: 190px;
-$side-close-width: 64px;
-
 .side-nav {
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid var(--app-panel-border);
-  overflow: hidden;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
   --el-menu-bg-color: transparent;
   --el-menu-text-color: var(--app-menu-text);
   --el-menu-hover-bg-color: var(--app-menu-hover);
   --el-menu-active-color: var(--app-accent);
-}
-
-.side-expand {
-  width: $side-expand-width;
-}
-
-.side-close {
-  width: $side-close-width;
-}
-
-.side-nav__header {
-  display: flex;
-  align-items: flex-start;
-  padding: 1rem 1rem 12px;
-
-  &--collapsed {
-    justify-content: center;
-  }
-
-  .side-nav__brand {
-    flex: 1;
-    overflow: hidden;
-    white-space: nowrap;
-
-    h5 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--app-text);
-      font-family:
-        'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans',
-        Arial, sans-serif;
-    }
-
-    p {
-      margin-top: 4px;
-      font-size: 12px;
-      color: var(--app-text-soft);
-    }
-  }
-
-  .expand__btn {
-    flex-shrink: 0;
-    margin-top: 4px;
-  }
-}
-
-.side-nav__menu {
-  border-right: 0;
-  background: transparent;
-
-  :deep(.el-menu-item) {
-    gap: 8px;
-  }
 }
 </style>
 

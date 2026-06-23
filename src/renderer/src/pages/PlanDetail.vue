@@ -1,6 +1,6 @@
 <template>
   <div class="planDetail">
-    
+
   </div>
 </template>
 
@@ -16,6 +16,3 @@ const props = withDefaults(
   }
 )
 </script>
-
-<style lang="scss" scoped>
-</style>

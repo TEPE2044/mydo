@@ -9,7 +9,3 @@
     <p class="app-page-body">这里可以放置我的信息、设置和账号相关的功能。</p>
   </section>
 </template>
-
-<style scoped>
-
-</style>

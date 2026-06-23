@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import SideNav from '../components/SideNav.vue'
-
 import dayjs from 'dayjs'
 import { ref, onMounted, onUnmounted } from 'vue'
 
@@ -19,40 +17,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="mainlayout">
+  <div class="flex h-screen w-full overflow-hidden">
     <SideNav />
-    <main class="mainlayout__content">
-      <div class="main-clock">
-        <h2>{{ now.format('YYYY-MM-DD HH:mm:ss') }}</h2>
+    <main class="flex-1 min-w-0 overflow-y-auto p-6 bg-gradient-to-b from-slate-50/70 to-slate-100/95">
+      <div class="flex items-center justify-center mb-2">
+        <h2 class="font-light text-2xl">{{ now.format('YYYY-MM-DD HH:mm:ss') }}</h2>
       </div>
       <router-view />
     </main>
   </div>
 </template>
-
-<style scoped>
-.mainlayout {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.main-clock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: .5rem;
-  h2 {
-    font-weight: 300;
-  }
-}
-
-.mainlayout__content {
-  flex: 1;
-  min-width: 0;
-  overflow-y: auto;
-  padding: 24px;
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.7) 0%, rgba(241, 245, 249, 0.95) 100%);
-}
-</style>

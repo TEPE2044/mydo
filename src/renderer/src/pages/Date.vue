@@ -22,7 +22,5 @@ const getDateDetail = () => {
 </template>
 
 <style lang="scss" scoped>
-.is-selected {
-  color: #1989fa;
-}
+.is-selected { color: #1989fa; }
 </style>

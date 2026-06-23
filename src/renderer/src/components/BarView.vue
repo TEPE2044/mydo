@@ -1,5 +1,5 @@
 <template>
-  <v-chart class="bar-view" :option="chartOption" autoresize />
+  <v-chart class="w-full h-[300px]" :option="chartOption" autoresize />
 </template>
 
 <script lang="ts" setup>
@@ -27,10 +27,3 @@ const chartOption = computed(() => ({
   series: [{ data: props.seriesData, type: 'bar', itemStyle: { borderRadius: [4, 4, 0, 0] } }]
 }))
 </script>
-
-<style lang="scss" scoped>
-.bar-view {
-  width: 100%;
-  height: 300px;
-}
-</style>
